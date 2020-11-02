@@ -123,8 +123,8 @@ if [ "$pkg" = "n" ] || [ "$pkg" = "no" ]; then
 
 	sleep 1
 
-        #apt-get install -y apache2
-        #apt-get install -y php
+        apt-get install -y apache2
+        apt-get install -y php
 
 elif [ "$pkg" != "n" ]; then
 
@@ -134,8 +134,8 @@ elif [ "$pkg" != "n" ]; then
 
 	sleep 1
 
-	#apt-get install apache2 php
-        #apt-get install php
+	apt-get install apache2 php
+        apt-get install php
 
 fi;
 
