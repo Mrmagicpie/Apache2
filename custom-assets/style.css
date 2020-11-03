@@ -1,0 +1,22 @@
+.button {
+	background:linear-gradient(to bottom, #159957 5%, #159957 100%);
+	background-color:#159957;
+	border-radius:6px;
+	border:1px solid #159957;
+	display:inline-block;
+	cursor:pointer;
+	color:#fcfcfc;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+}
+.button:hover {
+	background:linear-gradient(to bottom, #159957 5%, #159957 100%);
+	background-color:#159957;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
