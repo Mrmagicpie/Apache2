@@ -7,7 +7,7 @@ dir=$(pwd)
 ip4=$(curl ifconfig.me)
 
 echo "|---------------------------------------------------------|"
-echo "|Welcome to the Apache2 Basic Install. Please make sure   |"
+echo "|Welcome to the Apache2 Add Site. Please make sure        |"
 echo "|you have a fully qualified domain name, and SSL to match.|"
 echo "|   Your SSL must be in $dir, in .pem, and .key files.    |"
 echo "|                                                         |"
@@ -63,8 +63,8 @@ if [ "$ssl_yes" = "n" ] || [ "$ssl_yes" = "no" ]; then
         echo "|----------------------------------|"
         echo "|Exiting Apache2 configuration.    |"
         echo "|You will need SSL. You can get SSL|"
-	echo "|from CloudFlare or LetsEncrypt!   |"
-	echo "|----------------------------------|"
+	    echo "|from CloudFlare or LetsEncrypt!   |"
+	    echo "|----------------------------------|"
 
         exit
 
@@ -108,38 +108,6 @@ if [ "$ssl_dir" = "n" ] || [ "$continue" = "no" ]; then
         echo "|------------------------------------------------|"
         echo "|Please confirm your SSL location, and try again.|"
         echo "|------------------------------------------------|"
-
-fi;
-
-echo "|-----------------------------------|"
-echo "|Prompt to confirm package installs?|"
-echo "|                                   | "
-echo '|Please say "y" for yes, "n" for no.|'
-echo "|-----------------------------------|"
-
-read pkg
-
-if [ "$pkg" = "n" ] || [ "$pkg" = "no" ]; then
-
-        echo "|------------------------------------|"
-        echo "|We will not confirm package installs|"
-        echo "|------------------------------------|"
-
-	sleep 1
-
-        apt-get install -y apache2
-        apt-get install -y php
-
-elif [ "$pkg" != "n" ]; then
-
-        echo "|--------------------------------|"
-        echo "|We will confirm package installs|"
-        echo "|--------------------------------|"
-
-	sleep 1
-
-	apt-get install apache2 php
-        apt-get install php
 
 fi;
 
@@ -215,103 +183,7 @@ a2enmod ssl
 a2enmod rewrite
 a2ensite $domain
 
-echo "|------------------------------------------------|"
-echo '|Would you like Apache Access Files(.htaccess)?  |'
-echo "|                                                |"
-echo '|   Please say "y" for yes, and "n" to stop      |'
-echo "|------------------------------------------------|"
-
-read htaccess
-
-if [ "$htaccess" = "n" ] || [ "$htaccess" = "no" ]; then
-
-        echo "|--------------------------------------------------------|"
-        echo "|We will not configure Apache Access Files(.htaccess)!   |"
-        echo "|                                                        |"
-        echo "|The Apache2 Installation is now complete. If this didn't|"
-        echo "|           work for you, please let us know!!           |"
-        echo "|                                                        |"
-        echo "|         https://github.com/Mrmagicpie/Apache2          |"
-        echo "|--------------------------------------------------------|"
-
-	sleep 1
-
-        exit
-
-fi;
-
 chmod -R 755 /var/www
-
-a2conf="/etc/apache2/apache2.conf"
-mv "$a2conf" "/etc/apache2/default-apache2.conf.txt"
-touch "$a2conf"
-
-echo '''#
-#
-# Main Apache2 Configuration
-# https://Apache.Mrmagicpie.xyz
-#
-#
-
-# Timeout
-
-Timeout 300
-KeepAlive On
-MaxKeepAliveRequests 100
-KeepAliveTimeout 5
-
-# Logs
-
-ErrorLog ${APACHE_LOG_DIR}/error.log
-LogLevel warn
-LogFormat "%v:%p %h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" vhost_combined
-LogFormat "%h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined
-LogFormat "%h %l %u %t \"%r\" %>s %O" common
-LogFormat "%{Referer}i -> %U" referer
-
-# Mod/Site Includes
-
-IncludeOptional mods-enabled/*.load
-IncludeOptional mods-enabled/*.conf
-IncludeOptional conf-enabled/*.conf
-IncludeOptional sites-enabled/*.conf
-Include ports.conf
-
-# Directory Access
-
-<Directory /var/www/>
-	Options Indexes FollowSymLinks
-	AllowOverride All
-	Require all granted 
-</Directory>
-<Directory /usr/share>
-	AllowOverride None
-	Require all granted
-</Directory>
-<Directory />
-	Options FollowSymLinks
-	AllowOverride None
-	Require all denied
-</Directory>
-<FilesMatch "^\.ht">
-	Require all denied
-</FilesMatch>
-
-# Other Settings
-
-User ${APACHE_RUN_USER}
-Group ${APACHE_RUN_GROUP}
-HostnameLookups Off
-AccessFileName .htaccess
-DefaultRuntimeDir ${APACHE_RUN_DIR}
-PidFile ${APACHE_PID_FILE}
-DirectoryIndex index.php index.html index.htm index.xml
-
-#                       Mrmagicpie (c) 2020
-#
-#                       Apache.Mrmagicpie.xyz
-#
-#                   GitHub.com/Mrmagicpie/Apache2''' >> "$a2conf"
 
 service apache2 restart
 
