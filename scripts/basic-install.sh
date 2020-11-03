@@ -109,10 +109,12 @@ if [ "$ssl_dir" = "n" ] || [ "$continue" = "no" ]; then
         echo "|Please confirm your SSL location, and try again.|"
         echo "|------------------------------------------------|"
 
+        exit
+
 fi;
 
 echo "|-----------------------------------|"
-echo "|Prompt to confirm package installs?|"
+echo "|     Install Apache2 and PHP?      |"
 echo "|                                   | "
 echo '|Please say "y" for yes, "n" for no.|'
 echo "|-----------------------------------|"
@@ -121,19 +123,19 @@ read pkg
 
 if [ "$pkg" = "n" ] || [ "$pkg" = "no" ]; then
 
-        echo "|------------------------------------|"
-        echo "|We will not confirm package installs|"
-        echo "|------------------------------------|"
-
-	sleep 1
-
-        apt-get install -y apache2
-        apt-get install -y php
+        echo "|------------------------------|"
+	echo "|Exiting Apache2 configuration.|"
+        echo "|                              |"
+        echo "|  You need Apache2 and PHP to |"
+        echo "|    run an Apache2 server     |"
+	echo "|------------------------------|"
+        
+        exit
 
 elif [ "$pkg" != "n" ]; then
 
         echo "|--------------------------------|"
-        echo "|We will confirm package installs|"
+        echo "|   Installing Apache2 and PHP   |"
         echo "|--------------------------------|"
 
 	sleep 1
