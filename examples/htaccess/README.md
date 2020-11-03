@@ -36,7 +36,7 @@ RewriteCond %{REQUEST_FILENAME}   !-f
 RewriteCond %{REQUEST_URI} !\/$
 RewriteRule ^(.*) %{REQUEST_URI}/ [L,R=302]
 ```
-
+<br> </br>
 <p align="center"><a href="https://apache.mrmagicpie.xyz/examples/htaccess/HTML+PHP.htaccess" class="button">Download an example!</a></p>
 
 <h2>Redirects!</h2>
@@ -63,7 +63,7 @@ Notice the status codes.
 - 302 = Temporary
 
 Permanent will be cached by the browser, and will not change very often. Temporary will be fetched by the browser everytime, this is best for testing redirects.
-
+<br> </br>
 <p align="center"><a href="https://apache.mrmagicpie.xyz/examples/htaccess/HTML+PHP.htaccess" class="button">Download an example!</a></p>
-
+<br> </br>
 <p align="center">Mrmagicpie (c) 2020 - <a href="https://apache.mrmagicpie.xyz">Return Home</a></p>
