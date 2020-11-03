@@ -22,7 +22,7 @@ systemctl restart apache2
 
 Below is an example of some code we can use to rewrite the url. Generally, I would keep this code together to always be able to rewrite html and php.
 
-<mrmagicpie>```
+```
 RewriteEngine on 
 RewriteCond %{THE_REQUEST} \s/+(.*?/)?(?:index)?(.*?)\.(php|html)[\s?/] [NC]
 RewriteRule ^ /%1%2 [R=302,L,NE]
@@ -35,8 +35,8 @@ RewriteRule ^(.*) /$1.html [L]
 RewriteCond %{REQUEST_FILENAME}   !-f 
 RewriteCond %{REQUEST_URI} !\/$
 RewriteRule ^(.*) %{REQUEST_URI}/ [L,R=302]
-```</mrmagicpie>
-<mrmagicpie>hi</mrmagicpie>
+```
+
 <p align="center"><a href="https://apache.mrmagicpie.xyz/examples/htaccess/HTML+PHP.htaccess" class="button">Download an example!</a></p>
 
 <h2>Redirects!</h2>
@@ -50,13 +50,13 @@ For redirects, we don't need anything special. As long as you have htaccess file
 
 - Redirecting to addresses can redirect anywhere, to specify somewhere not on the same hostname you must supply a protol(ex. HTTP/HTTPS)
 
-<mrmagicpie>```
+```
 # Redirecting blog.html to a blog subdomain
 Redirect 301 /blog.html https://blog.mrmagicpie.xyz
 
 # Redirecting a Directory to another location
 Redirect 302 /store/ /blog/store.php
-```</mrmagicpie>
+```
 
 Notice the status codes. 
 - 301 = Permanent
