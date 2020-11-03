@@ -43,5 +43,5 @@ RewriteCond %{REQUEST_FILENAME}   !-f
 RewriteCond %{REQUEST_URI} !\/$
 RewriteRule ^(.*) %{REQUEST_URI}/ [L,R=302]
 ```
-
+<a class="btn">Download an example!</a>
 <a href="https://apache.mrmagicpie.xyz/examples/htaccess/HTML+PHP.htaccess" class="myButton">Download an example!</a>
