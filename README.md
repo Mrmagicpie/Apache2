@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://apache.mrmagicpie.xyz/custom-assets/style.css">
 <h1 align="center">Apache2 Tutorials/Help</h1>
 
 Hey! You found this? :o This is a work-in-progress project to help people learn the basics of operating an Apache2 server. Currently, I'm only supporting Ubuntu(which may work on Debian but oop). I may support other os's in the future.
@@ -35,5 +36,7 @@ All contributions are welcome! Just fork this repository, and then pull request 
 Well then, most likely, you're using the script wrong. Please follow the instructions in the script. Feel free to review the script source before trying to use it to make sure you know what you're doing! 
 
 If you really believe the script is broken please feel free to make an issue on this repository directly telling us where the issues are, and how we can reproduce them.
+
+<p align="center"><a href="https://apache.mrmagicpie.xyz/examples" class="button">Check out some Examples!</a></p>
 
 <p align="center"><a href="https://apache.mrmagicpie.xyz">Apache.Mrmagicpie.xyz</a> - <a href="https://mrmagicpie.xyz">Mrmagicpie.xyz</a>
