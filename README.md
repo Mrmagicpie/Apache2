@@ -22,9 +22,9 @@ All pre-requisits will be shown in the First message sent by the script. Most ti
 
 These scripts are currently only supported on Ubuntu. Feel free to try them on Debian, or any other Linux OS, though I give no garuntee that it will work!
 
-SSL can be obtained here:
-- https://cloudflare.com
-- https://letsencrypt.org
+SSL can be obtained for free here:
+- <a href="https://cloudflare.com">https://cloudflare.com</a>
+- <a href="https://letsencrypt.org">https://letsencrypt.org</a>
 
 <h2>How to Contribute</h2>
 
@@ -36,4 +36,4 @@ Well then, most likely, you're using the script wrong. Please follow the instruc
 
 If you really believe the script is broken please feel free to make an issue on this repository directly telling us where the issues are, and how we can reproduce them.
 
-<p align="center"><a href="https://apache.mrmagicpie.xyz">Apache.Mrmagicpie.xyz</a>
+<p align="center"><a href="https://apache.mrmagicpie.xyz">Apache.Mrmagicpie.xyz</a> - <a href="https://mrmagicpie.xyz">Mrmagicpie.xyz</a>

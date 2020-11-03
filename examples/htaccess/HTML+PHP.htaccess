@@ -1,0 +1,25 @@
+#
+# Remove HTML/PHP from file name
+#
+RewriteEngine on 
+RewriteCond %{THE_REQUEST} \s/+(.*?/)?(?:index)?(.*?)\.(php|html)[\s?/] [NC]
+RewriteRule ^ /%1%2 [R=302,L,NE]
+RewriteCond %{REQUEST_FILENAME}   !-f 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*) /$1.php [L]
+RewriteCond %{REQUEST_FILENAME}   !-f 
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*) /$1.html [L]
+RewriteCond %{REQUEST_FILENAME}   !-f 
+RewriteCond %{REQUEST_URI} !\/$
+RewriteRule ^(.*) %{REQUEST_URI}/ [L,R=302]
+
+# How do I use this?
+
+    # You need to enable the Apache mod_rewrite:
+
+        # Terminal command:  a2enmod rewrite
+
+    # You need to enable .htaccess files:
+
+        # Review example/README.md for more information
