@@ -36,12 +36,12 @@ RewriteCond %{REQUEST_FILENAME}   !-f
 RewriteCond %{REQUEST_URI} !\/$
 RewriteRule ^(.*) %{REQUEST_URI}/ [L,R=302]
 ```</mrmagicpie>
-
+<mrmagicpie>hi</mrmagicpie>
 <p align="center"><a href="https://apache.mrmagicpie.xyz/examples/htaccess/HTML+PHP.htaccess" class="button">Download an example!</a></p>
 
 <h2>Redirects!</h2>
 
-For redirects, we don't need anything special. As long as you have htaccess files enabled, you can use a redirect. Redirects are pretty straight forward. State you want to use a redirect, tell the browser the status code <i>[here's a detailed version of HTTP status codes.](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)</i>, specify the redirecting from address, and then the redirecting to address.
+For redirects, we don't need anything special. As long as you have htaccess files enabled, you can use a redirect. Redirects are pretty straight forward. State you want to use a redirect, tell the browser the status code <i>[here's a detailed version of HTTP status codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)</i>, specify the redirecting from address, and then the redirecting to address.
 
 **Notes:**
 - Redirecting from addresses must be accessable from the main url
