@@ -147,8 +147,6 @@ echo """#
 
 # Root SSL
 
-Listen 443
-
 <VirtualHost *:443>
 
         ServerName $domain

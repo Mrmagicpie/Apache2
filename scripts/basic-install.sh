@@ -13,12 +13,12 @@ echo "|   Your SSL must be in $dir, in .pem, and .key files.    |"
 echo "|                                                         |"
 echo "|         Please configure three DNS records!             |"
 echo "|                 Name:   Type:   Target:                 |"
-echo "|                  @       A   $ip4                    |"
-echo "|                  *       A   $ip4                    |"
+echo "|                  @       A   $ip4                  |"
+echo "|                  *       A   $ip4                  |"
 echo "|                  www    CNAME     @                     |"
 echo "|                                                         |"
-echo "|Please type below your fully qualified domain name:      |"
-echo "|         EX: mrmagicpie.xyz                              |"
+echo "|    Please type below your fully qualified domain name   |"
+echo "|                  EX: mrmagicpie.xyz                     |"
 echo "|---------------------------------------------------------|"
 
 read domain
@@ -180,8 +180,6 @@ echo """#
 </VirtualHost>
 
 # Root SSL
-
-Listen 443
 
 <VirtualHost *:443>
 
