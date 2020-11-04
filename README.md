@@ -39,5 +39,6 @@ If you really believe the script is broken please feel free to make an issue on 
 
 <br></br>
 
-<p align="center"><a href="https://apache.mrmagicpie.xyz/examples" class="button">Check out some Examples!</a> <a href="https://apache.mrmagicpie.xyz/scripts" class="button">Here's the scripts!</a></p>
+<p align="center"><a href="https://apache.mrmagicpie.xyz/examples" class="button">Check out some Examples!</a></p>
+<p align="center"><a href="https://apache.mrmagicpie.xyz/scripts" class="button">Here's the scripts!</a></p>
 <p align="center"><a href="https://apache.mrmagicpie.xyz">Apache.Mrmagicpie.xyz</a> - <a href="https://mrmagicpie.xyz">Mrmagicpie.xyz</a>
