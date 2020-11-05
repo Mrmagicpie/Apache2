@@ -63,8 +63,8 @@ if [ "$ssl_yes" = "n" ] || [ "$ssl_yes" = "no" ]; then
         echo "|----------------------------------|"
         echo "|Exiting Apache2 configuration.    |"
         echo "|You will need SSL. You can get SSL|"
-	    echo "|from CloudFlare or LetsEncrypt!   |"
-	    echo "|----------------------------------|"
+	    	echo "|from CloudFlare or LetsEncrypt!   |"
+	    	echo "|----------------------------------|"
 
         exit
 
