@@ -20,6 +20,6 @@ We reserve the right to decline any proposed changes. You will not be compensate
 
 You agree by contributing that all your contributions are to help this project, and not to gain any benefits.
 
-<br> </br>
+<br> 
 
 <h3 align="center">Last updated: November 3 2020, by <a href="https://github.com/mrmagicpie">@Mrmagicpie</a></h3>
