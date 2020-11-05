@@ -10,6 +10,7 @@ The Licensing agreement below is for all site data. This includes but is not lim
 Mrmagicpie License
 
 Copyright (c) 2020 Mrmagicpie
+
 https://mrmagicpie.xyz/license
 
 Below is the general copyright/permission license, header "General Copyright notice" is applicable to all works licensed under the Mrmagcpie License. The header, "Copyright notice if a Terms file is not included" is only applicable if a terms file is NOT included with this License. The header, "Copyright notice if a Terms file is included" is only applicable if a terms file is included with this License. The purpose of a terms file is to add more info(terms, permissions) to the license by the licensor.
@@ -47,11 +48,15 @@ Additional terms will be present in a Terms file, in association with the "Gener
 
 
 Aliases of files included in this Copyright notice and this permission notice:
+
   Terms-of-use file: "TERMS", "Terms", "TERMS.md", "Terms.md", "TERMS.txt", Terms.txt", or any other terms file specified on the line below:
+
       External aliases of terms-of-use:
        - "Mrmagicpie.txt"
        - "LICENSE-Mrmagicpie.md"
+
   License file: "LICENSE", "License", "LICENSE.txt", "LICENSE.txt", "LICENSE.php", "LICENSE.html", "License.php", "License.html"
+
       The file format, markdown/md, is not a valid format as a license file when using the Mrmagicpie License.
 
 
@@ -65,6 +70,7 @@ END OF COPYRIGHT NOTICE AND PERMISSION NOTICE - VIEW TERMS FILE IF INCLUDED!
 Mrmagicpie License
 
 Copyright (c) 2020 Mrmagicpie
+
 https://mrmagicpie.xyz/license
 
 Below are the terms for the License located at https://apache.mrmagicpie.xyz/legal.
@@ -80,10 +86,11 @@ Below are the terms for the License located at https://apache.mrmagicpie.xyz/leg
 (5) Mrmagcpie reserves the right to change or modify these Licenses/Terns at any point without warning or notice.
 
 END OF TERMS
+
 <br>
 <h2 align="center">Script Licensing</h2>
 
-The Licensing agreement below is for all scripts! I(Mrmagicpie) believe that the scripts should remain open source.
+The Licensing agreement below is for all scripts! I (Mrmagicpie) believe that the scripts should remain open source.
 
 <br>  
 <h3 align="center">Script License</h3>
