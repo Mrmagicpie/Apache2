@@ -144,25 +144,25 @@ if [ "$port" == "3306" ] || [ "$port" == "22" ] || [ "$port" == "21" ] || [ "$po
     echo '|      Please say "y" to continue, and "n" to stop          |'
     echo "|-----------------------------------------------------------|"
 
-fi;
+    read confirm
 
-read confirm
+    if [ "$confirm" = "n" ] || [ "$confirm" = "no" ]; then
 
-if [ "$confirm" = "n" ] || [ "$confirm" = "no" ]; then
+        echo "|------------------------------|"
+        echo "|Exiting Apache2 configuration.|"
+        echo "|------------------------------|"
 
-	echo "|------------------------------|"
-	echo "|Exiting Apache2 configuration.|"
-	echo "|------------------------------|"
+        exit
 
-	exit
+    elif [ "$confirm" != "y" ]; then
 
-elif [ "$confirm" != "y" ]; then
+        echo "|---------------|"
+        echo "|Invalid option!|"
+        echo "|---------------|"
 
-	echo "|---------------|"
-	echo "|Invalid option!|"
-	echo "|---------------|"
+        exit
 
-	exit
+    fi;
 
 fi;
 
