@@ -9,7 +9,7 @@ Hey! You found this? :o This is a work-in-progress project to help people learn 
 
 Firstly, either copy the script manually or use
 ```
-git clone https://github.com/mrmagicpie/apache2
+git clone https://github.com/Mrmagicpie/Apache2
 ``` 
 then you'll want to use 
 ```

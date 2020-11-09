@@ -7,7 +7,7 @@ dir=$(pwd)
 ip4=$(curl ifconfig.me)
 
 echo "|---------------------------------------------------------|"
-echo "|Welcome to the Apache2 Add Site. Please make sure        |"
+echo "|Welcome to the Apache2 Add Site Port. Please make sur    |"
 echo "|you have a fully qualified domain name, and SSL to match.|"
 echo "|   Your SSL must be in $dir, in .pem, and .key files.    |"
 echo "|                                                         |"
@@ -113,6 +113,85 @@ if [ "$ssl_dir" = "n" ] || [ "$continue" = "no" ]; then
 
 fi;
 
+echo "|----------------------------------------------------|"
+echo "|What port would you like to configure Apache2 with? |"
+echo "|                                                    |"
+echo "|This must be a number between 1-65535, and cannot be|"
+echo "|    443 or 80! Use the basic install for 443/80!    |"
+echo "|                                                    |"
+echo '|Please say "y" to continue, and "n" to stop         |'
+echo "|----------------------------------------------------|"
+
+read port
+
+if [ -n ${port//[0-9]/} ]; then
+    
+    echo "|-------------------------------|"
+    echo "| Please only input a number!   |"
+    echo "|                               |"
+    echo "| Exiting Apache2 configuration |"
+    echo "|-------------------------------|"
+
+    exit 
+
+fi;
+
+if [ "$port" == "3306" ] || [ "$port" == "22" ] || [ "$port" == "21" ] || [ "$port" == "25" ] || [ "$port" == "53" ] || [ "$port" == "143" ] || [ "$port" == "465" ] || [ "$port" == "587" ]; then
+
+    echo "|-----------------------------------------------------------|"
+    echo "|Beware port $port may have unintended consiquences if used!|"
+    echo "|                                                           |"
+    echo '|      Please say "y" to continue, and "n" to stop          |'
+    echo "|-----------------------------------------------------------|"
+
+fi;
+
+read confirm
+
+if [ "$confirm" = "n" ] || [ "$confirm" = "no" ]; then
+
+	echo "|------------------------------|"
+	echo "|Exiting Apache2 configuration.|"
+	echo "|------------------------------|"
+
+	exit
+
+elif [ "$confirm" != "y" ]; then
+
+	echo "|---------------|"
+	echo "|Invalid option!|"
+	echo "|---------------|"
+
+	exit
+
+fi;
+
+echo "|-------------------------------------------|"
+echo "|Configure Apache2 with the port: $port? |"
+echo "|                                           |"
+echo '|Please say "y" to continue, and "n" to stop|'
+echo "|-------------------------------------------|"
+
+read port_yes
+
+if [ "$port_yes" = "n" ] || [ "$port_yes" = "no" ]; then
+
+	echo "|------------------------------|"
+	echo "|Exiting Apache2 configuration.|"
+	echo "|------------------------------|"
+
+	exit
+
+elif [ "$port_yes" != "y" ]; then
+
+	echo "|---------------|"
+	echo "|Invalid option!|"
+	echo "|---------------|"
+
+	exit
+
+fi;
+
 # Config File
 conf="/etc/apache2/sites-available/$domain.conf"
 touch "$conf"
@@ -134,29 +213,18 @@ echo """#
 #
 #
 
-# Root No-SSL
-
-<VirtualHost *:80>
-
-	ServerName $domain
-	ServerAlias www.$domain
-
-	Redirect 302 / https://$domain
-	ErrorLog /var/www/$domain/logs/error.log
-	CustomLog /var/www/$domain/logs/access.log combined
-
-</VirtualHost>
+Listen $port
 
 # Root SSL
 
-<VirtualHost *:443>
+<VirtualHost *:$port>
 
-        ServerName $domain
-        ServerAlias www.$domain
+    ServerName $domain
+    ServerAlias www.$domain
 
-        DocumentRoot /var/www/$domain/website
-        ErrorLog /var/www/$domain/logs/error.log
-        CustomLog /var/www/$domain/logs/access.log combined
+    DocumentRoot /var/www/$domain/website
+    ErrorLog /var/www/$domain/logs/error.log
+    CustomLog /var/www/$domain/logs/access.log combined
 
 	SSLEngine on
 	SSLCertificateFile /ssl/$domain.pem
@@ -166,7 +234,7 @@ echo """#
 
 # Wildcard
 
-<VirtualHost *:80>
+<VirtualHost *:$port>
 
         ServerName wildcard.$domain
         ServerAlias *.$domain
@@ -198,6 +266,17 @@ echo """
 |                                                           |
 | Report issues or contribute here:                         |
 |         https://github.com/Mrmagicpie/Apache2             |
+|-----------------------------------------------------------|
+"""
+
+sleep 1
+
+echo """
+|-----------------------------------------------------------|
+|  Please beware, you cannot access your site from a normal |
+|              HTTP/HTTPS, you must use:                    |
+| https://$domain:$port          |
+|                to access your site!                       |
 |-----------------------------------------------------------|
 """
 
