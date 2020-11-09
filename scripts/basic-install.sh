@@ -4,7 +4,33 @@
 # https://Apache.Mrmagicpie.xyz
 
 dir=$(pwd)
-ip4=$(curl ifconfig.me)
+# ip4=$(curl ifconfig.me)
+
+if [ $EUID -ne 0 ]; then
+
+   echo "|------------------------------------|"
+   echo "|You are not root! Please use sudo or|"
+   echo "|     root to run this script!       |"
+   echo "|                                    |"
+   echo "|   Exiting Apache2 Configuration!   |"
+   echo "|------------------------------------|"
+
+   exit
+fi;
+
+if ! [ -x "$(command -v curl)" ]; then
+
+    echo "|-----------------------------|"
+    echo '|Error: curl is not installed.|'
+    echo "|-----------------------------|"
+
+    ip4="Your server's IP"
+
+else; then
+
+    ip4=$(curl ifconfig.me)
+
+fi;
 
 echo "|---------------------------------------------------------|"
 echo "|Welcome to the Apache2 Basic Install. Please make sure   |"
