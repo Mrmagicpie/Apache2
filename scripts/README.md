@@ -40,6 +40,64 @@ Well then, most likely, you're using the script wrong. Please follow the instruc
 If you really believe the script is broken please feel free to make an issue on this repository directly telling us where the issues are, and how we can reproduce them.
 
 <h2 align="center">Currently Available Scripts:</h2>
+
 <p align="center"><a href="https://apache.mrmagicpie.xyz/scripts/basic-install.sh" class="button">Basic Install!</a></p>
+<p align="center"><a href="https://apache.mrmagicpie.xyz/scripts/basic-install-port.sh" class="button">Basic Install Port!</a></p>
 <p align="center"><a href="https://apache.mrmagicpie.xyz/scripts/add-site.sh" class="button">Add a site!</a></p>
 <p align="center"><a href="https://apache.mrmagicpie.xyz/scripts/add-vhost.sh" class="button">Add a VHost!</a></p>
+
+<h2 align="center">Currently Available Scripts with descriptions:</h2>
+
+<h3>Basic Install</h3>
+
+The basic install script is what it says. It will do a basic install of Apache2, and PHP. It will configure your root domain(ex. mrmagicpie.xyz), a www subdomain(ex. www.mrmagicpie.xyz), and a wildcard redirect(so any other subdomain will auto redirect). You may choose to enable Apache access files, ``.htaccess``. And it will auto configure ``index.php`` files to be used first. 
+
+<h4>Prerequisites</h4>
+
+- SSL
+- Ubuntu server with SSH sudo/root access
+- Modivation to learn Apache
+
+<h3>Basic Install Port</h3>
+
+This script is the same as the basic install, but this one will ask you which port to use. I do not recommend using the following ports:
+```
+21 (FTP)
+22 (SSH)
+25 (SMTP)
+53 (DNS)
+80 (in default script)
+143 (IMAP)
+443 (in default script)
+465 (SMTP)
+587 (SMTP)
+3306 (MySQL)
+```
+You will be prompted to confirm if you want to use one of these ports.
+
+<h4>Prerequisites</h4>
+
+- SSL
+- Ubuntu server with SSH sudo/root access
+- Modivation to learn Apache
+
+<h3>Add a site</h3>
+
+Add a site is a script to add a domain to your server. This is the same concept as the basic install, but this **will not** install Apache2 or PHP. 
+
+<h4>Prerequisites</h4>
+
+- SSL
+- Ubuntu server with SSH sudo/root access
+- Modivation to learn Apache
+
+<h3>Add a VHost</h3>
+
+A VHost is the declaration of a connection. You need a VHost for any domain you want to be able to access your server. 
+
+<h4>Prerequisites</h4>
+
+- SSL
+- Ubuntu server with SSH sudo/root access
+- Modivation to learn Apache
+
