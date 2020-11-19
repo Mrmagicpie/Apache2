@@ -58,6 +58,21 @@ The basic install script is what it says. It will do a basic install of Apache2,
 - Ubuntu server with SSH sudo/root access
 - Modivation to learn Apache
 
+<h4>How to download</h4>
+
+You will need wget installed for this.
+```
+wget https://apache.mrmagicpie.xyz/scripts/basic-install.sh
+```
+Once you have the prerequisites you will want to run the script with 
+```
+sh basic-install.sh
+```
+**or**
+```
+sudo sh basic-install.sh
+```
+
 <h3>Basic Install Port</h3>
 
 This script is the same as the basic install, but this one will ask you which port to use. I do not recommend using the following ports:
@@ -81,6 +96,21 @@ You will be prompted to confirm if you want to use one of these ports.
 - Ubuntu server with SSH sudo/root access
 - Modivation to learn Apache
 
+<h4>How to download</h4>
+
+You will need wget installed for this.
+```
+wget https://apache.mrmagicpie.xyz/scripts/basic-install-port.sh
+```
+Once you have the prerequisites you will want to run the script with 
+```
+sh basic-install-port.sh
+```
+**or**
+```
+sudo sh basic-install-port.sh
+```
+
 <h3>Add a site</h3>
 
 Add a site is a script to add a domain to your server. This is the same concept as the basic install, but this **will not** install Apache2 or PHP. 
@@ -91,6 +121,21 @@ Add a site is a script to add a domain to your server. This is the same concept 
 - Ubuntu server with SSH sudo/root access
 - Modivation to learn Apache
 
+<h4>How to download</h4>
+
+You will need wget installed for this.
+```
+wget https://apache.mrmagicpie.xyz/scripts/add-site.sh
+```
+Once you have the prerequisites you will want to run the script with 
+```
+sh add-site.sh
+```
+**or**
+```
+sudo sh add-site.sh
+```
+
 <h3>Add a VHost</h3>
 
 A VHost is the declaration of a connection. You need a VHost for any domain you want to be able to access your server. 
@@ -100,4 +145,19 @@ A VHost is the declaration of a connection. You need a VHost for any domain you 
 - SSL
 - Ubuntu server with SSH sudo/root access
 - Modivation to learn Apache
+
+<h4>How to download</h4>
+
+You will need wget installed for this.
+```
+wget https://apache.mrmagicpie.xyz/scripts/add-vhost.sh
+```
+Once you have the prerequisites you will want to run the script with 
+```
+sh add-vhost.sh
+```
+**or**
+```
+sudo sh add-vhost.sh
+```
 
