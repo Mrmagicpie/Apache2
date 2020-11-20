@@ -48,7 +48,7 @@ If you really believe the script is broken please feel free to make an issue on 
 
 <h2 align="center">Currently Available Scripts with descriptions:</h2>
 
-<h3>Basic Install</h3>
+<h3 align="center">Basic Install</h3>
 
 The basic install script is what it says. It will do a basic install of Apache2, and PHP. It will configure your root domain(ex. mrmagicpie.xyz), a www subdomain(ex. www.mrmagicpie.xyz), and a wildcard redirect(so any other subdomain will auto redirect). You may choose to enable Apache access files, ``.htaccess``. And it will auto configure ``index.php`` files to be used first. 
 
@@ -73,7 +73,7 @@ sh basic-install.sh
 sudo sh basic-install.sh
 ```
 
-<h3>Basic Install Port</h3>
+<h3 align="center">Basic Install Port</h3>
 
 This script is the same as the basic install, but this one will ask you which port to use. I do not recommend using the following ports:
 ```
@@ -111,7 +111,7 @@ sh basic-install-port.sh
 sudo sh basic-install-port.sh
 ```
 
-<h3>Add a site</h3>
+<h3 align="center">Add a site</h3>
 
 Add a site is a script to add a domain to your server. This is the same concept as the basic install, but this **will not** install Apache2 or PHP. 
 
@@ -136,7 +136,7 @@ sh add-site.sh
 sudo sh add-site.sh
 ```
 
-<h3>Add a VHost</h3>
+<h3 align="center">Add a VHost</h3>
 
 A VHost is the declaration of a connection. You need a VHost for any domain you want to be able to access your server. 
 
