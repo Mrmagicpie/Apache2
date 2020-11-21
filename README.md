@@ -3,7 +3,7 @@
 
 Welcome to my Apache help site! We are currently undergoing a full redo. We are adding support for several operating systems! Therefore, they get their own site :D Check out our other sites below.
 
-<br></br>
+<br>
 
-<p align="center"><a href="https://ubuntu.apache.mrmagicpie.xyz/" class="button">Ubuntu</a></p>
-<p align="center"><a href="https://centos.apache.mrmagicpie.xyz/scripts" class="button">Centos</a></p>
+<p align="center"><a href="https://ubuntu-apache.mrmagicpie.xyz" class="button">Ubuntu</a></p>
+<p align="center"><a href="https://centos-apache.mrmagicpie.xyz" class="button">Centos</a></p>
